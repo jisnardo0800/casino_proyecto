@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Menú - Casino{% endblock %}
+{% block content %}
+<h2>Bienvenido, {{ nombre }} {{ apellido }}</h2>
+<p>Saldo actual: {{ saldo }} fichas</p>
+<form method="POST" action="{{ url_for('menu') }}">
+    <button type="submit">Recargar +1000 fichas</button>
+</form>
+<img src="{{ url_for('static', filename='images/gray_back.png') }}" class="card">
+<div class="menu-buttons">
+    <a href="{{ url_for('blackjack') }}"><button>Jugar Blackjack</button></a>
+    <a href="{{ url_for('ruleta') }}"><button>Jugar Ruleta</button></a>
+    <a href="{{ url_for('logout') }}"><button>Cerrar Sesión</button></a>
+</div>
+{% endblock %}

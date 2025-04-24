@@ -1,0 +1,18 @@
+{
+    "asd@gmail.com": [
+        {
+            "fecha": "2025-04-24 00:01:17",
+            "tipo": "Blackjack",
+            "apuesta": 100,
+            "resultado": "Derrota",
+            "saldo": 11900
+        },
+        {
+            "fecha": "2025-04-24 00:01:30",
+            "tipo": "Blackjack",
+            "apuesta": 1000,
+            "resultado": "Victoria",
+            "saldo": 12900
+        }
+    ]
+}

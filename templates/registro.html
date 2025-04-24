@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Registro - Casino{% endblock %}
+{% block content %}
+<h2>Registro</h2>
+<form method="POST" action="{{ url_for('registro') }}">
+    <label>Nombre:</label><br>
+    <input type="text" name="nombre" required><br>
+    <label>Apellido:</label><br>
+    <input type="text" name="apellido" required><br>
+    <label>Email:</label><br>
+    <input type="email" name="email" required><br>
+    <label>Contraseña:</label><br>
+    <input type="password" name="password" required><br>
+    <button type="submit">Registrar</button>
+</form>
+<p class="error">{{ error }}</p>
+<p>¿Ya tienes cuenta? <a href="{{ url_for('login') }}">Inicia sesión aquí</a>.</p>
+{% endblock %}

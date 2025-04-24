@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Blackjack{% endblock %}
+{% block content %}
+<h2>Blackjack</h2>
+<div class="blackjack-table">
+    <div class="hand">
+        <h3>Crupier ({{ dealer_total }})</h3>
+        {% for img in dealer_cards %}
+            <img src="{{ img }}" class="card" alt="carta">
+        {% endfor %}
+    </div>
+    <div class="hand">
+        <h3>Jugador ({{ player_total }})</h3>
+        {% for img in player_cards %}
+            <img src="{{ img }}" class="card" alt="carta">
+        {% endfor %}
+    </div>
+</div>
+{% if not game_over %}
+<form method="post">
+    <button name="action" value="hit">Pedir carta</button>
+    <button name="action" value="stand">Plantarse</button>
+</form>
+{% endif %}
+<p class="message">{{ message }}</p>
+<a href="{{ url_for('blackjack') }}"><button>Jugar de nuevo</button></a>
+<a href="{{ url_for('menu') }}"><button>Volver al Menú</button></a>
+{% endblock %}
