@@ -5,14 +5,14 @@
             "apellido": "asd",
             "email": "asd@gmail.com",
             "password": "scrypt:32768:8:1$CKaRAa2VjT7tUREA$eed9a6e4f3278fc5ea73f6217c228daed5663f07c81623123792992a5a5ad38d7d1144702518273798fe92c2e9adfa9bcb7df5952646907b2466a25c23e900bc",
-            "saldo": 6000
+            "saldo": 7000
         },
         {
             "nombre": "123",
             "apellido": "123",
             "email": "123@gmail.com",
             "password": "scrypt:32768:8:1$q8kv3Ns6rYpf5Hl4$6594cf0533c593a7140495ddde285f4bb03d7acea2dd73375f73e67fd2956a4baf81b27798ab3dd0231da421aa0d9531afcf16a6614fb21b6580a576af394459",
-            "saldo": 5000
+            "saldo": 0
         },
         {
             "nombre": "juan",
@@ -20,6 +20,20 @@
             "email": "juan@gmail.com",
             "password": "scrypt:32768:8:1$iezCgZOhLzxTZjni$380f9f878d0ef9c2bcb0e912d7c418cb655bfc3d1795a2694ad3191fc33d4314436d0b0e867709cbc647c7bb8b35fc583e5073f33ff1ab169157c8a472cec2da",
             "saldo": 4000
+        },
+        {
+            "nombre": "nene",
+            "apellido": "malo",
+            "email": "nene@gmail.com",
+            "password": "scrypt:32768:8:1$P1ActGXMDWXgF10O$76b9cbf72f4c6b66de1b310107e4b4778c13d56990882f00186a78fcad88a1a8ac4267596bf5d39c72b387c80338a34203ffee9b37980bc0d1197ff839fcdf2d",
+            "saldo": 6000
+        },
+        {
+            "nombre": "PROFESOR ",
+            "apellido": "PROFESOR",
+            "email": "PROF@GMAIL.COM",
+            "password": "scrypt:32768:8:1$0Wsc0hBcQLjkRq4n$f49798be0d962ef2a8fdc89caf8151e56f72f2e0f701eebec4e6e9c853c260d7615dbab42ad54895cf1168b8b871211df98a677ee3fc345ac77fe7b7a5711fb5",
+            "saldo": 6000
         }
     ]
 }
