@@ -1,103 +1,41 @@
+<!-- ruleta.html -->
 {% extends "base.html" %}
-{% block title %}Ruleta - Casino{% endblock %}
+{% block title %}Ruleta{% endblock %}
+
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/ruleta.css') }}">
+{% endblock %}
+
 {% block content %}
-<h2>Ruleta</h2>
-<p>{{ result }}</p>
-<form method="POST">
-    <label>Tipo de apuesta:</label>
-    <select name="bet_type" id="bet_type">
-        <option value="">--Seleccione--</option>
-        <option value="number" {% if bet_type=='number' %}selected{% endif %}>Número</option>
-        <option value="color" {% if bet_type=='color' %}selected{% endif %}>Color</option>
-        <option value="parity" {% if bet_type=='parity' %}selected{% endif %}>Par/Impar</option>
-        <option value="dozen" {% if bet_type=='dozen' %}selected{% endif %}>Docena</option>
-    </select><br>
-    <div id="field_number">
-        <label>Número (0-36):</label>
-        <input type="number" name="bet_number" min="0" max="36" value="{{ bet_value if bet_type=='number' else '' }}"><br>
-    </div>
-    <div id="field_color">
-        <label>Color:</label>
-        <select name="bet_color" id="bet_color">
-            <option value="rojo" {% if bet_value=='rojo' %}selected{% endif %}>Rojo</option>
-            <option value="negro" {% if bet_value=='negro' %}selected{% endif %}>Negro</option>
-        </select><br>
-    </div>
-    <div id="field_parity">
-        <label>Paridad:</label>
-        <select name="bet_parity" id="bet_parity">
-            <option value="par" {% if bet_value=='par' %}selected{% endif %}>Par</option>
-            <option value="impar" {% if bet_value=='impar' %}selected{% endif %}>Impar</option>
-        </select><br>
-    </div>
-    <div id="field_dozen">
-        <label>Docena:</label>
-        <select name="bet_dozen" id="bet_dozen">
-            <option value="1" {% if bet_value==1 %}selected{% endif %}>1ª (1-12)</option>
-            <option value="2" {% if bet_value==2 %}selected{% endif %}>2ª (13-24)</option>
-            <option value="3" {% if bet_value==3 %}selected{% endif %}>3ª (25-36)</option>
-        </select><br>
-    </div>
-    <label>Fichas a apostar:</label>
-    <input type="number" name="amount" min="1" value="{{ amount }}"><br>
-    <button type="submit">Girar</button>
-</form>
+<div id="game">
+<!-- CHIPS -->
+<div id="chips-panel">
+    <button class="chip" data-value="1">1</button>
+    <button class="chip" data-value="5">5</button>
+    <button class="chip" data-value="10">10</button>
+    <!-- CORRECCIÓN: cerrar bien la comilla -->
+    <button class="chip" data-value="100">100</button>
 
-<table class="roulette-table">
-    <tr>
-        {% for cell in grid_numbers %}
-        <td class="{{ cell.color }}">
-            {{ cell.num }}
-            {% if bet_type=='number' and bet_value == cell.num %}
-            <img src="{{ url_for('static', filename='images/chip.png') }}" alt="Ficha" class="chip">
-            {% endif %}
-        </td>
-        {% endfor %}
-    </tr>
-    <tr>
-        <td class="red">Rojo
-            {% if bet_type=='color' and bet_value=='rojo' %}
-            <img src="{{ url_for('static', filename='images/chip.png') }}" alt="Ficha" class="chip">
-            {% endif %}
-        </td>
-        <td class="black">Negro
-            {% if bet_type=='color' and bet_value=='negro' %}
-            <img src="{{ url_for('static', filename='images/chip.png') }}" alt="Ficha" class="chip">
-            {% endif %}
-        </td>
-    </tr>
-    <tr>
-        <td>Par
-            {% if bet_type=='parity' and bet_value=='par' %}
-            <img src="{{ url_for('static', filename='images/chip.png') }}" alt="Ficha" class="chip">
-            {% endif %}
-        </td>
-        <td>Impar
-            {% if bet_type=='parity' and bet_value=='impar' %}
-            <img src="{{ url_for('static', filename='images/chip.png') }}" alt="Ficha" class="chip">
-            {% endif %}
-        </td>
-    </tr>
-    <tr>
-        <td>1ª 12
-            {% if bet_type=='dozen' and bet_value==1 %}
-            <img src="{{ url_for('static', filename='images/chip.png') }}" alt="Ficha" class="chip">
-            {% endif %}
-        </td>
-        <td>2ª 12
-            {% if bet_type=='dozen' and bet_value==2 %}
-            <img src="{{ url_for('static', filename='images/chip.png') }}" alt="Ficha" class="chip">
-            {% endif %}
-        </td>
-        <td>3ª 12
-            {% if bet_type=='dozen' and bet_value==3 %}
-            <img src="{{ url_for('static', filename='images/chip.png') }}" alt="Ficha" class="chip">
-            {% endif %}
-        </td>
-    </tr>
-</table>
+    <button id="clear-chip">clear</button>
+    <button id="spin-btn">spin</button>
+</div>
 
-<a href="{{ url_for('menu') }}"><button>Volver al Menú</button></a>
+<!-- INFO -->
+<div id="info-panel">
+    <div>Saldo: <span id="balance">{{ saldo }}</span></div>
+    <div>Apuesta: <span id="current-bet">0</span></div>
+</div>
 
-<script src="{{ url_for('static', filename='js/ruleta.js') }}"></script>
+<!-- TABLERO -->
+<div id="table-container"></div>
+<div id="outside-top"></div>
+<div id="outside-bottom"></div>
+
+<!-- RESULTADO -->
+<!-- CORRECCIÓN: id debe ser EXACTAMENTE result-square -->
+<div id="result-square">–</div>
+</div>
+
+<script src="{{ url_for('static', filename='js/ruleta.js') }}" defer></script>
 {% endblock %}

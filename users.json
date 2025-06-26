@@ -34,6 +34,13 @@
             "email": "PROF@GMAIL.COM",
             "password": "scrypt:32768:8:1$0Wsc0hBcQLjkRq4n$f49798be0d962ef2a8fdc89caf8151e56f72f2e0f701eebec4e6e9c853c260d7615dbab42ad54895cf1168b8b871211df98a677ee3fc345ac77fe7b7a5711fb5",
             "saldo": 6000
+        },
+        {
+            "nombre": "pepe",
+            "apellido": "pepe",
+            "email": "pepe@gmail.com",
+            "password": "scrypt:32768:8:1$tFmCbatKteG1lEtz$99c34057df7f0207f2221415883462bbe6fc9602b2b41ae73d0bfceb5fb0613fcb15b89974e8370ca62feadc6ba1c7444904874bf72a42e958b5ac87821da362",
+            "saldo": 7000
         }
     ]
 }

@@ -60,31 +60,3 @@ button:hover {
 .menu-buttons button {
     width: 150px;
 }
-.roulette-table {
-    margin: 20px auto;
-    border-collapse: collapse;
-}
-.roulette-table td {
-    width: 40px; height: 40px;
-    border: 1px solid #777;
-    vertical-align: middle;
-    position: relative;
-}
-.roulette-table td.red {
-    background-color: #c0392b;
-}
-.roulette-table td.black {
-    background-color: #2c3e50;
-}
-.roulette-table td.green {
-    background-color: #27ae60;
-    color: #000;
-}
-.chip {
-    width: 25px;
-    position: absolute;
-    top: 5px; right: 5px;
-}
-#field_number, #field_color, #field_parity, #field_dozen {
-    display: none;
-}
